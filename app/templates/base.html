@@ -1,34 +1,20 @@
 <html>
-	<head>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         {% if title %}
-		<title>{{ title }} - Microblog</title>
-		{% else %}
-		<title>Welcome to Microblog!</title>
-		{% endif %}
-	    <style>
-
-
+    <title>{{ title }} - Microblog</title>
+    {% else %}
+    <title>Welcome to Microblog!</title>
+    {% endif %}
+      <style>
         .card-wrapper {
             color: black;
             text-decoration: none;
-            width: 75%;
+            width: 80%;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            height: 195px;
-        }
-        .builder-input {
-          border: 0;
-          outline: 0;
-          background: transparent;
-          border-bottom: 1px solid black;
-          border-radius: 0;
-        }
-        .profile-builder-text {
-            font-size: 26;
-            text-align: right;
-            padding-right: 25px;
+            margin-top: 20px;
         }
 
         .item-wrapper {
@@ -43,101 +29,58 @@
             border: 1px black solid;
             padding-top: 5px;
             padding-bottom: 5px;
-            width: 50px;
+            width: 70px;
             margin: 0px 10px;
             text-align: center;
         }
 
-        .input-search {
-            height: 60px;
-            padding-left: 15px;
-            border-radius: 5px;
+        .total-box {
+            background-color: tomato;
+            color: white;
+            padding: 10px;
+            text-align: right;
+        }
+
+        .centered {
+            position: absolute;
+            font-size: 30px;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .total {
+            font-size: 20px;
+        }                    
+
+        .basketbutton {
+            background-color: #3377ff;
             border: none;
-            outline: none;
-        }
-        .btn-search {
-            font-size: 26px;
-            font-weight: 500;
-            background-color: #A3F9CB;
-            padding-left: 30px;
-            padding-right: 30px;
-            height: 60px;
-
-        }
-
-        body {
-            padding: 20px 50px;
-        }
-
-        body-bkg {
-            background-image: url(https://media.wired.com/photos/5aea42f5506b56198b7c6ffd/master/w_2400,c_limit/NigerianPrinces-TA-912015140.jpg);
-        }
-
-        .list-img {
-            height: 130px;
-            margin: 10px auto 10px auto;
-        }
-        .card {
-          border-top: 10px solid #A3F9CB;
-          border-radius: 3px;
-          margin-top: 15px;
-          box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-          margin: auto;
-          text-align: center;
-          font-family: arial;
-        }
-
-        .title {
-          color: grey;
-          font-size: 18px;
-        }
-
-        button {
-          border: none;
-          outline: 0;
-          display: inline-block;
-          padding: 8px;
-          color: white;
-          background-color: #000;
-          text-align: center;
-          cursor: pointer;
-          width: 100%;
-          font-size: 18px;
-        }
-
-        a {
-          text-decoration: none;
-          font-size: 22px;
-          color: black;
-        }
-        a:hover {
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
             text-decoration: none;
-            color: black;
+            display: inline-block;
+            font-size: 16px;
         }
 
-        button:hover, a:hover {
-          opacity: 0.7;
+        img {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
         }
-
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
-     <script
-  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-  ></script>
-    <script>
-        $(document).ready(function(){
-             $("#buttonsubmit").click(function(){
-                $('#this > div:last-child').append( '<div class="col-sm-3"></div><div class="col-sm-3 profile-builder-text" style="margin-top: 40px;"><label style="text-align: right;" class="profile-builder-text">item:</label></div><div class="col-sm-6"><input type="text" class="form-control builder-input" style="margin-top: 40px;" placeholder="Enter name"></div><div class="col-sm-6"></div><div class="col-sm-4"><input type="text" class="form-control builder-input" style="margin-top: 20px;" placeholder="Product category"></div><div class="col-sm-2"><input type="text" class="form-control builder-input" style="margin-top: 20px;" placeholder="Price"></div><div class="col-sm-6"></div><div class="col-sm-2"><label style="margin-top: 40px; color: grey;">Photo:</label></div><div class="col-sm-4"><input type="file" class="form-control-file" style="margin-top: 40px;"></div>' );
-                event.preventDefault()
-             });
-        });
-    </script>
-
-	</head>
-	<body>
-
-        <div>Microblog: <a href="/index">Home</a></div>
-        <hr>
-        {% block content %}{% endblock %}
-
+  </head>
+  <body>
+        <div class="jumbotron">
+            <div>Microblog: <a href="/index">Home</a></div>
+            <hr>
+            {% block content %}{% endblock %}
+            </hr>
+        </div>
     </body>
 </html>
