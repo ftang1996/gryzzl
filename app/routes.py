@@ -21,6 +21,7 @@ def nonprofit(id):
 
     return render_template('nonprofit.html', nonprofit=nonprofit, items=items)
 
+
 @app.route('/results')
 def results():
     posts = Nonprofit.query.all()
