@@ -14,18 +14,29 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            border-top: 10px solid #B1FBD4;
-            border-radius: 3px;
-            margin-top: 15px;
-            height: 185px;
+            height: 195px;
+        }
+        .builder-input {
+          border: 0;
+          outline: 0;
+          background: transparent;
+          border-bottom: 1px solid black;
+          border-radius: 0;
+        }
+        .profile-builder-text {
+            font-size: 26;
+            text-align: right;
+            padding-right: 25px;
         }
         img {
             height: 130px;
             margin: 10px auto 10px auto;
         }
         .card {
+          border-top: 10px solid #A3F9CB;
+          border-radius: 3px;
+          margin-top: 15px;
           box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-          height: 180px;
           margin: auto;
           text-align: center;
           font-family: arial;
@@ -70,7 +81,7 @@
     <script>
         $(document).ready(function(){
              $("#buttonsubmit").click(function(){
-                $('#this > tbody:last-child').append( '<tr><th scope="row"><input type="text"></th><td><input type="text"></td></tr>' );
+                $('#this > div:last-child').append( '<div class="col-sm-4"></div><div class="col-sm-2" style="margin-top: 40px;"><label style="text-align: right;" class="profile-builder-text">item:</label></div><div class="col-sm-6"><input type="text" class="form-control builder-input" style="margin-top: 40px;" placeholder="Enter name"></div><div class="col-sm-6"></div><div class="col-sm-4"><input type="text" class="form-control builder-input" style="margin-top: 20px;" placeholder="Product category"></div><div class="col-sm-2"><input type="text" class="form-control builder-input" style="margin-top: 20px;" placeholder="Price"></div><div class="col-sm-6"></div><div class="col-sm-2"><label style="margin-top: 40px; color: grey;">Photo:</label></div><div class="col-sm-4"><input type="file" class="form-control-file" style="margin-top: 40px;"></div>' );
                 event.preventDefault()
              });
         });

@@ -1,66 +1,112 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="card" style="width: 90%; margin-top: 50px;">
-    <h1 style="margin-top: 30px;">Create a profile</h1>
+<div class="card" style="width: 75%; margin-top: 50px; margin-bottom: 100px;">
+
     <form>
         <div class="row" style="width: 90%; margin: 25px auto 25px auto;">
-            <div class="col-sm-3">
-                <label>Name</label>
+            <div class="col-sm-3"><h1 style="margin-top: 30px; text-align:left; margin-left: 5%; font-size:50;"><strong>Profile</strong></h1></div>
+            <div class="col-sm-3 profile-builder-text" style="margin-top: 40px;">
+                <label class="profile-builder-text">Name</label>
             </div>
-            <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="Enter name">
+            <div class="col-sm-6" style="margin-top: 40px;">
+                <input type="text" class="form-control builder-input" placeholder="Enter name">
+            </div>
+
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3 profile-builder-text" style="margin-top: 40px;">
+                <label class="profile-builder-text">Logo</label>
+            </div>
+            <div class="col-sm-6" style="margin-top: 40px;">
+                <input type="file" class="form-control-file">
+            </div>
+
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3 profile-builder-text" style="margin-top: 40px;">
+                <label class="profile-builder-text">Photo</label>
+            </div>
+            <div class="col-sm-6" style="margin-top: 40px;">
+                <input type="file" class="form-control-file">
+            </div>
+
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3 profile-builder-text" style="margin-top: 40px;">
+                <label class="profile-builder-text">Address</label>
+            </div>
+            <div class="col-sm-6" style="margin-top: 40px;">
+                <input type="text" class="form-control builder-input" placeholder="Line 1">
+            </div>
+
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3" style="margin-top: 20px;"></div>
+            <div class="col-sm-6" style="margin-top: 20px;">
+                <input type="text" class="form-control builder-input" placeholder="Line 2">
+            </div>
+
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3" style="margin-top: 20px;"></div>
+            <span class="col-sm-6">
+                    <input type="text" class="form-control builder-input" placeholder="City" style="margin-top: 20px; width: 28%; margin-right: 5%; display: inline;">
+                    <input type="text" class="form-control builder-input" placeholder="State" style="margin-top: 20px; width: 28%; margin-right: 5%; display: inline;">
+                    <input type="text" class="form-control builder-input" placeholder="Zipcode" style="margin-top: 20px; width: 30%; display: inline;">
+            </span>
+
+
+            <div class="col-sm-3 profile-builder-text"></div>
+                <div class="col-sm-3 profile-builder-text" style="margin-top: 40px; align: left;">
+                    <label class="profile-builder-text">
+                        Our Mission
+                    </label>
+                </div>
+            <div class="col-sm-6"></div>
+
+            <div class="col-sm-5"></div>
+            <div class="col-sm-7" style="margin-top: 20px;">
+                <textarea type="text" class="form-control builder-input" rows=5></textarea>
+            </div>
+
+        </div>
+
+        <div id="this">
+        <div class="row" style="width: 90%; margin: 50px auto 25px auto;">
+            <div class="col-sm-3"><h1 style="margin-top: 30px; text-align:left; margin-left: 5%; font-size:50;"><strong>Wish List</strong></h1>
+            </div>
+            <div class="col-sm-3 profile-builder-text" style="margin-top: 40px;">
+                <label style="text-align: right;" class="profile-builder-text">
+                        item:
+                    </label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" class="form-control builder-input" style="margin-top: 40px;" placeholder="Enter name">
+            </div>
+
+            <div class="col-sm-6"></div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control builder-input" style="margin-top: 20px;" placeholder="Product category">
+            </div>
+            <div class="col-sm-2">
+                <input type="text" class="form-control builder-input" style="margin-top: 20px;" placeholder="Price">
+            </div>
+
+            <div class="col-sm-6"></div>
+            <div class="col-sm-2">
+                <label style="margin-top: 40px; color: grey;">Photo:</label>
+            </div>
+            <div class="col-sm-4">
+                <input type="file" class="form-control-file" style="margin-top: 40px;">
+            </div>
+
+        </div>
+        </div>
+
+
+        <div class="row" style="margin-top: 75px;">
+            <div class="col-sm-7"></div>
+            <div class="col-sm-5">
+                <button class="btn " id="buttonsubmit" style="width: 120px; background-color: #A3F9CB; height: 50px; display: inline-block; margin-right: 10px; border-radius: 0;">Add Item</button>
+                <button class="btn btn-primary" style="width: 120px; height: 50px; display: inline-block; border-radius: 0;">Save Profile</button>
             </div>
         </div>
-        <div class="row" style="width: 90%; margin: 25px auto 25px auto;">
-            <div class="col-sm-3">
-                <label>Email</label>
-
-            </div>
-            <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="Enter email">
-            </div>
-        </div>
-         <div class="row" style="width: 90%; margin: 25px auto 25px auto;">
-            <div class="col-sm-3">
-                <label>Password</label>
-
-            </div>
-            <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="Enter password">
-            </div>
-        </div>
-        <label style="text-align: left; display: block; margin-left: 10%;">
-            Tell us about your mission:
-        </label>
-        <div class="row" style="width: 80%; margin: 25px auto 25px auto;">
-            <textarea type="text" class="form-control" rows=5></textarea>
-        </div>
-        <h3>Add items to your wish list:</h3>
-        <table class="table" id="this" style="width: 80%; margin: 20px auto;">
-            <thead>
-                <tr>
-                    <th scope="col">Item</th>
-                    <th scope="col">Approximate Cost</th>
-                </tr>
-            </thead>
-            <tbody >
-                <tr>
-                    <th scope="row">
-                        <input type="text">
-                    </th>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <button class="btn btn-success" id="buttonsubmit" style="width: 100px; display: block; margin-left: 10%;">Add Item</button>
-
-
-        <button class="btn btn-primary" style="width: 150px; display: block; margin-left: 75%;">Save Profile</button>
-
 
     </form>
 </div>
