@@ -31,18 +31,6 @@ def results():
 def profileBuilder():
     return render_template('profile-builder.html')
 
-
-@app.route('/profile-display')
-def profileDisplay():
-    profile = [
-            {
-            'name': "St. Anthony's",
-            'description': "St. Anthony's works to feed, clothe, heal and lift the spirits of San Franciscans in need. We are privately funded and rely entirely on the generosity of.",
-            'picture': 'https://www.stanthonysf.org/app/uploads/2014/10/DR-Howard-and-Ellen-1080x477.jpg'
-            }
-        ]
-    return render_template('profile-display.html', profile=profile[0])
-
 @app.route('/confirm')
 def confirm():
     return render_template('confirmation.html')
