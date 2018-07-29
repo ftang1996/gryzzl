@@ -1,32 +1,36 @@
 <html>
 	<head>
-		{% if title %}
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        {% if title %}
 		<title>{{ title }} - Microblog</title>
 		{% else %}
 		<title>Welcome to Microblog!</title>
 		{% endif %}
+	    <style>
+        #card-wrapper {
+            color: black;
+            text-decoration: none;
+            width: 80%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+        img {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 	</head>
 	<body>
-		<div>Microblog: 
-            <a href="{{ url_for('index') }}">Home</a>
-			{% if current_user.is_anonymous %}
-			    <a href="{{ url_for('login') }}">Login</a>
-			{% else %}
-                <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-                <a href="{{ url_for('explore') }}">Explore</a>
-                <a href="{{ url_for('logout') }}">Logout</a>
-			{% endif %}
-		</div>
-		<hr>
-		{% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-                    <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-		{% endwith %}
-		{% block content %}{% endblock %}
-	</body>
+        <div>Microblog: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
 </html>

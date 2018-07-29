@@ -1,3 +1,4 @@
+from flask import render_template
 from app import app
 
 @app.route('/')
@@ -6,7 +7,21 @@ def index():
     return "Hello, World!"
 
 
-
+@app.route('/temp')
+def temp():
+    posts = [
+        {
+            'name': "St. Anthony",
+            'description': 'Beautiful day in Portland!',
+            'picture': 'https://cdn.britannica.com/700x450/45/5645-004-7461C1BD.jpg'
+        },
+        {
+            'name': "St. Marney",
+            'description': 'The Avengers movie was so cool!',
+            'picture': 'https://assets.bhg.com/bhg/styles/nfp_1080_portrait/public/images/2016/6/21/102627748.jpg?o_HYvbc4ssmmNnsVLuEs1cMVd_Wx.geO'
+        }
+    ]
+    return render_template('profile-list.html', posts=posts)
 
 # from datetime import datetime
 # from flask import render_template, flash, request, redirect, url_for
