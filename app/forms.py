@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Le
 from app.models import Nonprofit, Item
 
 class SearchForm(FlaskForm):
-    search = StringField('Find a Nonprofit', validators=[DataRequired()], render_kw={"placeholder": "Find a Nonprofit"})
+    search = StringField('Find a Nonprofit', validators=[DataRequired()], render_kw={"value": "San Francisco"})
     submit = SubmitField('Search')
 
 
