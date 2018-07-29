@@ -32,7 +32,7 @@ def temp():
         {
             'name': "St. Marney",
             'description': 'The Avengers movie was so cool!',
-            'picture': 'https://assets.bhg.com/bhg/styles/nfp_1080_portrait/public/images/2016/6/21/102627748.jpg?o_HYvbc4ssmmNnsVLuEs1cMVd_Wx.geO'
+            'picture': 'https://assets.bhg.com/bhg/styles/nfp_1080_portrait/public/img/2016/6/21/102627748.jpg?o_HYvbc4ssmmNnsVLuEs1cMVd_Wx.geO'
         }
     ]
     return render_template('profile-list.html', posts=posts)
