@@ -12,13 +12,14 @@
           <h5 style="margin-top: 40px; color: black; opacity: 100%; text-align: left; margin-left: 15px; margin-right: 10px;">{{nonprofit.description}}</h5>
       </div>
 
-        <div class="row justify-content-center" style="margin-top: -250px;">
+        <h2 style="text-align: center; margin-top: -250px; margin-bottom: 50px;">How your donations could help people in need:</h2>
+        <div class="row justify-content-center">
         {% for item in items %}
             <div class="card" style="width: 16rem; height: 16rem;">
+                <div class="card-title" style="align:center; margin-left: auto; margin-right:auto;"> <div class="centered">{{item.name}}</div></div>
                 <div class="card-body">
-                    <img class="card-img-top" id={{item.id}} style="width:165px;height:165px;">
-                    <div class="centered">{{item.name}}</div>
-                    <p class="card-text" align="center">
+                    <img class="card-img-top" id={{item.id}} style="width:145px;height:145px; margin-bottom: 15px; margin-top: -25px;">
+                    <p class="card-text" style="padding-top: 20px;" align="center">
                         <br>
                         <i>Price:</i> ${{ item.price }}    <i>Quantity:</i>
                     <input name="qty[]"
@@ -33,16 +34,16 @@
                     data-item-id = {{item.id}}
                     data-item-name = {{item.name}}
                     data-item-price = {{item.price}}
-                    data-item-image = "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png"
+                    data-item-image = "https://cdn0.iconfinder.com/data/icons/pixel-perfect-at-24px-volume-2/24/2034-512.png"
                      />
                 </div>
             </div>
         {% endfor %}
         <div class="card" style="width: 16rem; height: 16rem;">
+            <div class="card-title" style="align:center; margin-left: auto; margin-right:auto;"> <div class="centered">Donate money</div></div>
             <div class="card-body">
-                <img class="card-img-top" id="donate" style="width:165px;height:165px;">
-                <div class="centered">Donate money</div>
-                <p class="card-text" align="center">
+                <img class="card-img-top" id="donate" src="http://icons.iconarchive.com/icons/cjdowner/cryptocurrency/512/Dollar-USD-icon.png" style="width:145px;height:145px; margin-bottom: 15px; margin-top: -25px;">
+                <p class="card-text" align="center" style="padding-top: 20px;">
                     <br>
                     <i>Amount:</i>
                 <input name="qty[]"
@@ -57,7 +58,7 @@
                 data-item-id = "donate"
                 data-item-name = "donation"
                 data-item-price = 1
-                data-item-image = "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png"
+                data-item-image = "https://banner2.kisspng.com/20171216/5d0/dollar-sign-png-5a355146e059a3.4282492115134436549189.jpg"
                  />
             </div>
         </div>
