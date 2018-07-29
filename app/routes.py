@@ -1,11 +1,23 @@
-from flask import render_template
+from flask import render_template, flash, redirect
 from app import app, db
 from app.models import Nonprofit, Item
+from app.forms import SearchForm
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello, World!"
+    form = SearchForm()
+    if form.validate_on_submit():
+        return redirect('/results', search=form.search.data)
+
+    return render_template('index.html', title='Home', form=form)
+
+
+@app.route('/results')
+def results():
+    form = SearchForm()
+    return render_template('index.html', title='Home', form=form)
+
 
 @app.route('/nonprofit/<id>')
 def nonprofit(id):
@@ -124,16 +136,16 @@ def temp():
 # @login_required
 # def edit_profile():
 #     form = EditProfileForm(current_user.username)
-#     if form.validate_on_submit():
-#         current_user.username = form.username.data
-#         current_user.about_me = form.about_me.data
-#         db.session.commit()
-#         flash('Your changes have been saved')
-#         return redirect(url_for('edit_profile'))
-#     elif request.method == 'GET':
+# #     if form.validate_on_submit():
+# #         current_user.username = form.username.data
+# #         current_user.about_me = form.about_me.data
+# #         db.session.commit()
+# #         flash('Your changes have been saved')
+# #         return redirect(url_for('edit_profile'))
+# #     elif request.method == 'GET':
 #         form.username.data = current_user.username
 #         form.about_me.data = current_user.about_me
-#     return render_template('edit_profile.html', titile='Edit Profile', form=form)
+#     return render_template('edit_profile.html', title='Edit Profile', form=form)
 #
 #
 # @app.route('/follow/<username>')
