@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+    {% for post in posts %}
+    <a href="#" id="card-wrapper">
+        <div class="card">
+            <div class="card-title">
+                <h2>
+                    {{post.name}}
+                </h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6" id="img-wrapper">
+                        <img src={{post.picture}} alt="Flower">
+                    </div>
+                    <div class="col-sm-6">
+                        {{post.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+{% endblock %}
