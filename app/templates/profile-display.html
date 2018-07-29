@@ -2,16 +2,22 @@
 
 {% block content %}
 
+<div style="width: 100%; background-color: #f9f9f9;">
+    <div style="width: 1350px; margin: 0 auto; background-color: white; box-shadow: 0 4px 16px -6px black;" class="jumbotron">
+      <img src={{profile.picture}} style="width:75%; margin-left: 24%; margin-top: 40px; background-color: white;">
 
-<div class="card" style="width: 80%;">
-  <img src={{profile.picture}} style="width:100%;">
-  <h1>{{profile.name}}</h1>
-  <p class="title">CEO & Founder, Example</p>
-  <p>{{profile.description}}</p>
-  <div style="margin: 24px 0;">
+      <div style="width: 450px; height: 450px; position: relative; left: 90px; top: -330px; background-color: rgba(235,235,235, 0.8);">
+          <h1 style="color: black; opacity: 100%; padding-top: 40px; text-align: center; font-size: 65px;"><strong>{{profile.name}}</strong></h1>
+          <h4 style="margin-top: 90px; color: black; opacity: 100%; text-align: left; margin-left: 15px;"><strong>Our Mission</strong></h4>
+          <h5 style="margin-top: 40px; color: black; opacity: 100%; text-align: left; margin-left: 15px; margin-right: 10px;">{{profile.description}}</h5>
+      </div>
 
- </div>
- <p><button style="background-color: blue;">Contact</button></p>
+      <h1 style="margin-top: 200px;"></h1>
+      <div style="margin: 24px 0;">
+
+     </div>
+     <p><button style="background-color: blue;">Contact</button></p>
+    </div>
 </div>
 
 {% endblock %}
