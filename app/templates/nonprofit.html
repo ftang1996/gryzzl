@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Nonprofit: {{ nonprofit.name }}</h1>
+    {% for item in items %}
+        <p>{{ item.name }}: ${{ item.price }}</p>
+    {% endfor %}
+
+{% endblock %}

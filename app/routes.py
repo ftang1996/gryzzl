@@ -1,11 +1,18 @@
 from flask import render_template
-from app import app
+from app import app, db
+from app.models import Nonprofit, Item
 
 @app.route('/')
 @app.route('/index')
 def index():
     return "Hello, World!"
 
+@app.route('/nonprofit/<id>')
+def nonprofit(id):
+    nonprofit = Nonprofit.query.filter_by(id=id).first_or_404()
+    items = Item.query.filter_by(nonprofit_id=id)
+
+    return render_template('nonprofit.html', nonprofit=nonprofit, items=items)
 
 @app.route('/temp')
 def temp():
