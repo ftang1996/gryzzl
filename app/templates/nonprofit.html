@@ -2,8 +2,33 @@
 
 {% block content %}
     <h1>Nonprofit: {{ nonprofit.name }}</h1>
-    {% for item in items %}
-        <p>{{ item.name }}: ${{ item.price }}</p>
-    {% endfor %}
+    <p>Mission: {{ nonprofit.description }}</p>
+
+    <div class="container">
+        <div class="row justify-content-start">
+        {% for item in items %}
+                <div class="col-6 item-wrapper card">
+                    <div class="row">
+                        <div class="col-6">
+                            {{ item.name }}: ${{ item.price }}
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-danger">-</button>
+                                <p class="amt-box">1</p>
+                                <button type="button" class="btn btn-success">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        {% endfor %}
+        </div>
+    </div>
+
+
+
+
 
 {% endblock %}
