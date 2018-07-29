@@ -5,7 +5,7 @@ from app.forms import SearchForm
 
 
 @app.route('/')
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/index')
 def index():
     form = SearchForm()
     if form.validate_on_submit():
