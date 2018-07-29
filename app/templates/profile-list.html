@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for post in posts %}
-    <div class="card-wrapper">
+    <a href="#" id="card-wrapper">
         <div class="card">
             <div class="card-title">
                 <h2>
@@ -20,6 +20,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </a>
+
     {% endfor %}
 {% endblock %}

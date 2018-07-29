@@ -3,6 +3,7 @@ from app import app, db
 from app.models import Nonprofit, Item
 from app.forms import SearchForm
 
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -10,12 +11,6 @@ def index():
     if form.validate_on_submit():
         return redirect('/results', search=form.search.data)
 
-    return render_template('index.html', title='Home', form=form)
-
-
-@app.route('/results')
-def results():
-    form = SearchForm()
     return render_template('index.html', title='Home', form=form)
 
 
