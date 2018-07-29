@@ -11,7 +11,7 @@ def index():
 def temp():
     posts = [
         {
-            'name': "St. Anthony",
+            'name': "St. Anthony ",
             'description': 'Beautiful day in Portland!',
             'picture': 'https://cdn.britannica.com/700x450/45/5645-004-7461C1BD.jpg'
         },
