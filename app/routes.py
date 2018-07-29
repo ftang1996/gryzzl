@@ -23,6 +23,23 @@ def temp():
     ]
     return render_template('profile-list.html', posts=posts)
 
+
+@app.route('/profile-builder')
+def profileBuilder():
+    return render_template('profile-builder.html')
+
+
+@app.route('/profile-display')
+def profileDisplay():
+    profile = [
+            {
+            'name': "St. Anthony ",
+            'description': 'Beautiful day in Portland!',
+            'picture': 'https://cdn.britannica.com/700x450/45/5645-004-7461C1BD.jpg'
+            }
+        ]
+    return render_template('profile-display.html', profile=profile[0])
+
 # from datetime import datetime
 # from flask import render_template, flash, request, redirect, url_for
 # from flask_login import current_user, login_user, logout_user, login_required
