@@ -26,16 +26,33 @@ def temp():
     posts = [
         {
             'name': "St. Anthony ",
-            'description': 'Beautiful day in Portland!',
-            'picture': 'https://cdn.britannica.com/700x450/45/5645-004-7461C1BD.jpg'
+            'description': "St. Anthony's works to feed, clothe, heal and lift the spirits of San Franciscans in need. We are privately funded and rely entirely on the generosity of.",
+            'picture': 'http://newvietgens.com/wp-content/uploads/2017/12/AAEAAQAAAAAAAAkjAAAAJDkzMGM2ZmZmLTQwYzYtNGIxOC1iYmEwLTJkMTk2ZjI5YTE2Nw-300x202.png'
         },
         {
             'name': "St. Marney",
-            'description': 'The Avengers movie was so cool!',
-            'picture': 'https://assets.bhg.com/bhg/styles/nfp_1080_portrait/public/img/2016/6/21/102627748.jpg?o_HYvbc4ssmmNnsVLuEs1cMVd_Wx.geO'
+            'description': "St. Anthony's works to feed, clothe, heal and lift the spirits of San Franciscans in need. We are privately funded and rely entirely on the generosity of.",
+            'picture': 'http://newvietgens.com/wp-content/uploads/2017/12/AAEAAQAAAAAAAAkjAAAAJDkzMGM2ZmZmLTQwYzYtNGIxOC1iYmEwLTJkMTk2ZjI5YTE2Nw-300x202.png'
         }
     ]
     return render_template('profile-list.html', posts=posts)
+
+
+@app.route('/profile-builder')
+def profileBuilder():
+    return render_template('profile-builder.html')
+
+
+@app.route('/profile-display')
+def profileDisplay():
+    profile = [
+            {
+            'name': "St. Anthony ",
+            'description': 'Beautiful day in Portland!',
+            'picture': 'https://cdn.britannica.com/700x450/45/5645-004-7461C1BD.jpg'
+            }
+        ]
+    return render_template('profile-display.html', profile=profile[0])
 
 # from datetime import datetime
 # from flask import render_template, flash, request, redirect, url_for

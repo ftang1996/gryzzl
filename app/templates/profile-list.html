@@ -1,21 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
+
     {% for post in posts %}
-    <a href="#" id="card-wrapper">
+    <a href="#" class="card-wrapper rounded-top">
         <div class="card">
-            <div class="card-title">
-                <h2>
-                    {{post.name}}
-                </h2>
-            </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-6" id="img-wrapper">
+                <div class="row style="height: 170px;">
+                    <div class="col-sm-4" id="img-wrapper">
                         <img src={{post.picture}} alt="Flower">
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 card-text">
+                        <h4 style="text-align: left;">
+                    <strong>{{post.name}}</strong>
+                        </h4>
+                        <h6 style="text-align: left;">
                         {{post.description}}
+                        </h6>
                     </div>
                 </div>
             </div>
