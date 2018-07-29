@@ -41,6 +41,16 @@
 
         }
 
+        .btn-login {
+            font-size: 14px;
+            font-weight: 500;
+            background-color: #A3F9CB;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 50px;
+
+        }
+
         .body-bkg {
             background-image: url(https://media.wired.com/photos/5aea42f5506b56198b7c6ffd/master/w_2400,c_limit/NigerianPrinces-TA-912015140.jpg);
         }
@@ -56,7 +66,17 @@
 	</head>
 	<body class="body-bkg">
 
-        <div style="color:white">Microblog: <a href="/index" style="color:white">Home</a></div>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-6">
+                    <h3><a href="/index" style="color:white">Home</a></h3>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-login" type="button">Login/Signup</button>
+                </div>
+            </div>
+        </div>
+
         <hr>
         <div class="vertical-center">
             <div class="container">
