@@ -7,6 +7,7 @@
 		<title>Welcome to Microblog!</title>
 		{% endif %}
 	    <style>
+
         .card-wrapper {
             color: black;
             text-decoration: none;
@@ -28,6 +29,49 @@
             text-align: right;
             padding-right: 25px;
         }
+
+        .item-wrapper {
+            color: black;
+            text-decoration: none;
+            width: 50%;
+            display: block;
+            padding: 30px 20px;
+        }
+
+        .amt-box {
+            border: 1px black solid;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 50px;
+            margin: 0px 10px;
+            text-align: center;
+        }
+
+        .input-search {
+            height: 60px;
+            padding-left: 15px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .btn-search {
+            font-size: 26px;
+            font-weight: 500;
+            background-color: #A3F9CB;
+            padding-left: 30px;
+            padding-right: 30px;
+            height: 60px;
+
+        }
+
+        body {
+            padding: 20px 50px;
+        }
+
+        body-bkg {
+            background-image: url(https://media.wired.com/photos/5aea42f5506b56198b7c6ffd/master/w_2400,c_limit/NigerianPrinces-TA-912015140.jpg);
+        }
+
         img {
             height: 130px;
             margin: 10px auto 10px auto;
@@ -81,7 +125,7 @@
     <script>
         $(document).ready(function(){
              $("#buttonsubmit").click(function(){
-                $('#this > div:last-child').append( '<div class="col-sm-4"></div><div class="col-sm-2" style="margin-top: 40px;"><label style="text-align: right;" class="profile-builder-text">item:</label></div><div class="col-sm-6"><input type="text" class="form-control builder-input" style="margin-top: 40px;" placeholder="Enter name"></div><div class="col-sm-6"></div><div class="col-sm-4"><input type="text" class="form-control builder-input" style="margin-top: 20px;" placeholder="Product category"></div><div class="col-sm-2"><input type="text" class="form-control builder-input" style="margin-top: 20px;" placeholder="Price"></div><div class="col-sm-6"></div><div class="col-sm-2"><label style="margin-top: 40px; color: grey;">Photo:</label></div><div class="col-sm-4"><input type="file" class="form-control-file" style="margin-top: 40px;"></div>' );
+                $('#this > div:last-child').append( '<div class="col-sm-3"></div><div class="col-sm-3 profile-builder-text" style="margin-top: 40px;"><label style="text-align: right;" class="profile-builder-text">item:</label></div><div class="col-sm-6"><input type="text" class="form-control builder-input" style="margin-top: 40px;" placeholder="Enter name"></div><div class="col-sm-6"></div><div class="col-sm-4"><input type="text" class="form-control builder-input" style="margin-top: 20px;" placeholder="Product category"></div><div class="col-sm-2"><input type="text" class="form-control builder-input" style="margin-top: 20px;" placeholder="Price"></div><div class="col-sm-6"></div><div class="col-sm-2"><label style="margin-top: 40px; color: grey;">Photo:</label></div><div class="col-sm-4"><input type="file" class="form-control-file" style="margin-top: 40px;"></div>' );
                 event.preventDefault()
              });
         });
@@ -89,8 +133,10 @@
 
 	</head>
 	<body>
+
         <div>Microblog: <a href="/index">Home</a></div>
         <hr>
         {% block content %}{% endblock %}
+
     </body>
 </html>
