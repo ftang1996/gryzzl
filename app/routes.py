@@ -9,7 +9,7 @@ from app.forms import SearchForm
 def index():
     form = SearchForm()
     if form.validate_on_submit():
-        return redirect('/results', search=form.search.data)
+        return redirect('/results')
 
     return render_template('index.html', title='Home', form=form)
 
@@ -21,8 +21,8 @@ def nonprofit(id):
 
     return render_template('nonprofit.html', nonprofit=nonprofit, items=items)
 
-@app.route('/temp')
-def temp():
+@app.route('/results')
+def results():
     posts = [
         {
             'name': "St. Anthony ",
@@ -53,6 +53,11 @@ def profileDisplay():
             }
         ]
     return render_template('profile-display.html', profile=profile[0])
+
+@app.route('/confirm')
+def confirm():
+    return render_template('confirmation.html')
+
 
 # from datetime import datetime
 # from flask import render_template, flash, request, redirect, url_for

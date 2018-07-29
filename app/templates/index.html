@@ -48,7 +48,6 @@
         .vertical-center {
           min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
           min-height: 100vh; /* These two lines are counted as one :-)       */
-
           display: flex;
           align-items: center;
         }
@@ -60,33 +59,31 @@
         <div style="color:white">Microblog: <a href="/index" style="color:white">Home</a></div>
         <hr>
         <div class="vertical-center">
-        <div class="container">
-            <div class="row justify-content-center"><h1 style="color: white; font-size: 48px; font-weight: 600;
-            margin-bottom:
-            50px;">
-                NONPROFIT SEARCH</h1></div>
-            <div class="row justify-content-center">
-            <form action="" method="post" novalidate>
-                {{ form.hidden_tag() }}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h1 style="color: white; font-size: 48px; font-weight: 600; margin-bottom: 50px;">NONPROFIT SEARCH</h1>
+                </div>
+                <div class="row justify-content-center">
+                    <form action="" method="post" novalidate>
+                        {{ form.hidden_tag() }}
 
-                    <div class="row justify-content-center no-gutters">
-                        <div class="col-10">
-                            <div class="d-flex justify-content-end">
-                                {{ form.search(size=50, class_="input-search") }}
+                            <div class="row justify-content-center no-gutters">
+                                <div class="col-10">
+                                    <div class="d-flex justify-content-end">
+                                        {{ form.search(size=50, class_="input-search") }}
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="d-flex justify-content-start">
+                                        {{ form.submit(class_="btn btn-search") }}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="d-flex justify-content-start">
-                                {{ form.submit(class_="btn btn-search") }}
-                            </div>
-                        </div>
-                    </div>
 
-            </form>
+                    </form>
                 </div>
             </div>
-            </div>
-
+        </div>
     </body>
 </html>
 
