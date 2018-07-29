@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Here are some nonprofits:</h1>
     {% for post in posts %}
     <a href="nonprofit/{{post.id}}" class="card-wrapper rounded-top">
         <div class="card" style="height: 180px;">
