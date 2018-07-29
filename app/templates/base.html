@@ -7,6 +7,7 @@
 		<title>Welcome to Microblog!</title>
 		{% endif %}
 	    <style>
+
         .card-wrapper {
             color: black;
             text-decoration: none;
@@ -18,7 +19,51 @@
             border-radius: 3px;
             margin-top: 15px;
             height: 185px;
+
         }
+
+        .item-wrapper {
+            color: black;
+            text-decoration: none;
+            width: 50%;
+            display: block;
+            padding: 30px 20px;
+        }
+
+        .amt-box {
+            border: 1px black solid;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 50px;
+            margin: 0px 10px;
+            text-align: center;
+        }
+
+        .input-search {
+            height: 60px;
+            padding-left: 15px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .btn-search {
+            font-size: 26px;
+            font-weight: 500;
+            background-color: #A3F9CB;
+            padding-left: 30px;
+            padding-right: 30px;
+            height: 60px;
+
+        }
+
+        body {
+            padding: 20px 50px;
+        }
+
+        body-bkg {
+            background-image: url(https://media.wired.com/photos/5aea42f5506b56198b7c6ffd/master/w_2400,c_limit/NigerianPrinces-TA-912015140.jpg);
+        }
+
         img {
             height: 130px;
             margin: 10px auto 10px auto;
@@ -78,8 +123,10 @@
 
 	</head>
 	<body>
+
         <div>Microblog: <a href="/index">Home</a></div>
         <hr>
         {% block content %}{% endblock %}
+
     </body>
 </html>
