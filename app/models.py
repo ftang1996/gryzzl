@@ -10,7 +10,8 @@ class Nonprofit(db.Model):
     website = db.Column(db.String, index=True)
     phone = db.Column(db.Integer, index=True)
     email = db.Column(db.String, index=True)
-    photo = db.Column(db.String, index=True)
+    photo = db.Column(db.String)
+    logo = db.Column(db.String)
     wishlist = db.relationship('Item', backref='author', lazy='dynamic')
 
     def __repr__(self):

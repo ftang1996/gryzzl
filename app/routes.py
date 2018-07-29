@@ -5,7 +5,7 @@ from app.forms import SearchForm
 
 
 @app.route('/')
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     form = SearchForm()
     if form.validate_on_submit():
@@ -23,18 +23,19 @@ def nonprofit(id):
 
 @app.route('/results')
 def results():
-    posts = [
-        {
-            'name': "St. Anthony ",
-            'description': "St. Anthony's works to feed, clothe, heal and lift the spirits of San Franciscans in need. We are privately funded and rely entirely on the generosity of.",
-            'picture': 'http://newvietgens.com/wp-content/uploads/2017/12/AAEAAQAAAAAAAAkjAAAAJDkzMGM2ZmZmLTQwYzYtNGIxOC1iYmEwLTJkMTk2ZjI5YTE2Nw-300x202.png'
-        },
-        {
-            'name': "St. Marney",
-            'description': "St. Anthony's works to feed, clothe, heal and lift the spirits of San Franciscans in need. We are privately funded and rely entirely on the generosity of.",
-            'picture': 'http://newvietgens.com/wp-content/uploads/2017/12/AAEAAQAAAAAAAAkjAAAAJDkzMGM2ZmZmLTQwYzYtNGIxOC1iYmEwLTJkMTk2ZjI5YTE2Nw-300x202.png'
-        }
-    ]
+    posts = Nonprofit.query.all()
+    # [
+    #     {
+    #         'name': "St. Anthony Foundation",
+    #         'description': "St. Anthony's works to feed, clothe, heal and lift the spirits of San Franciscans in need. We are privately funded and rely entirely on the generosity of.",
+    #         'picture': 'http://newvietgens.com/wp-content/uploads/2017/12/AAEAAQAAAAAAAAkjAAAAJDkzMGM2ZmZmLTQwYzYtNGIxOC1iYmEwLTJkMTk2ZjI5YTE2Nw-300x202.png'
+    #     },
+    #     {
+    #         'name': "St. Marney",
+    #         'description': "St. Anthony's works to feed, clothe, heal and lift the spirits of San Franciscans in need. We are privately funded and rely entirely on the generosity of.",
+    #         'picture': 'http://newvietgens.com/wp-content/uploads/2017/12/AAEAAQAAAAAAAAkjAAAAJDkzMGM2ZmZmLTQwYzYtNGIxOC1iYmEwLTJkMTk2ZjI5YTE2Nw-300x202.png'
+    #     }
+    # ]
     return render_template('profile-list.html', posts=posts)
 
 

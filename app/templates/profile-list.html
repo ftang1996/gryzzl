@@ -3,12 +3,12 @@
 {% block content %}
 
     {% for post in posts %}
-    <a href="#" class="card-wrapper rounded-top">
+    <a href="nonprofit/{{post.id}}" class="card-wrapper rounded-top">
         <div class="card" style="height: 180px;">
             <div class="card-body">
                 <div class="row" style="height: 170px;">
                     <div class="col-sm-4" id="img-wrapper">
-                        <img src={{post.picture}} alt="Flower">
+                        <img src="http://newvietgens.com/wp-content/uploads/2017/12/AAEAAQAAAAAAAAkjAAAAJDkzMGM2ZmZmLTQwYzYtNGIxOC1iYmEwLTJkMTk2ZjI5YTE2Nw-300x202.png" alt="Flower">
                     </div>
                     <div class="col-sm-6 card-text">
                         <h4 style="text-align: left;">
