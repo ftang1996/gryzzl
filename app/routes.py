@@ -24,18 +24,6 @@ def nonprofit(id):
 @app.route('/results')
 def results():
     posts = Nonprofit.query.all()
-    # [
-    #     {
-    #         'name': "St. Anthony Foundation",
-    #         'description': "St. Anthony's works to feed, clothe, heal and lift the spirits of San Franciscans in need. We are privately funded and rely entirely on the generosity of.",
-    #         'picture': 'http://newvietgens.com/wp-content/uploads/2017/12/AAEAAQAAAAAAAAkjAAAAJDkzMGM2ZmZmLTQwYzYtNGIxOC1iYmEwLTJkMTk2ZjI5YTE2Nw-300x202.png'
-    #     },
-    #     {
-    #         'name': "St. Marney",
-    #         'description': "St. Anthony's works to feed, clothe, heal and lift the spirits of San Franciscans in need. We are privately funded and rely entirely on the generosity of.",
-    #         'picture': 'http://newvietgens.com/wp-content/uploads/2017/12/AAEAAQAAAAAAAAkjAAAAJDkzMGM2ZmZmLTQwYzYtNGIxOC1iYmEwLTJkMTk2ZjI5YTE2Nw-300x202.png'
-    #     }
-    # ]
     return render_template('profile-list.html', posts=posts)
 
 
@@ -48,9 +36,9 @@ def profileBuilder():
 def profileDisplay():
     profile = [
             {
-            'name': "St. Anthony ",
-            'description': 'Beautiful day in Portland!',
-            'picture': 'https://cdn.britannica.com/700x450/45/5645-004-7461C1BD.jpg'
+            'name': "St. Anthony's",
+            'description': "St. Anthony's works to feed, clothe, heal and lift the spirits of San Franciscans in need. We are privately funded and rely entirely on the generosity of.",
+            'picture': 'https://www.stanthonysf.org/app/uploads/2014/10/DR-Howard-and-Ellen-1080x477.jpg'
             }
         ]
     return render_template('profile-display.html', profile=profile[0])
