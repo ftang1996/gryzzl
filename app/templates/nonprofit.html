@@ -12,16 +12,15 @@
           <h5 style="margin-top: 40px; color: black; opacity: 100%; text-align: left; margin-left: 15px; margin-right: 10px;">{{nonprofit.description}}</h5>
       </div>
 
-        <h2 style="text-align: center; margin-top: -250px; margin-bottom: 50px;">How your donations could help people in need:</h2>
+        <h2 style="text-align: center; margin-top: -250px; margin-bottom: 50px;">Educate yourself on how your donation could be spent:</h2>
         <div class="row justify-content-center">
-        {% for item in items %}
             <div class="card" style="width: 16rem; height: 16rem;">
-                <div class="card-title" style="align:center; margin-left: auto; margin-right:auto;"> <div class="centered">{{item.name}}</div></div>
+                <div class="card-title" style="align:center; margin-left: auto; margin-right:auto;"> <div class="centered">Meal</div></div>
                 <div class="card-body">
-                    <img class="card-img-top" id={{item.id}} style="width:145px;height:145px; margin-bottom: 15px; margin-top: -25px;">
+                    <img class="card-img-top" id=1 style="width:145px;height:145px; margin-bottom: 15px; margin-top: -25px;">
                     <p class="card-text" style="padding-top: 20px;" align="center">
                         <br>
-                        <i>Price:</i> ${{ item.price }}    <i>Quantity:</i>
+                        <i>Price:</i> $5    <i>Quantity:</i>
                     <input name="qty[]"
                     onkeypress="return isNumeric(event)"
                     oninput="maxLengthCheck(this)"
@@ -31,18 +30,40 @@
                     size="3.5"
                     min = "0"
                     max = "999"
-                    data-item-id = {{item.id}}
-                    data-item-name = {{item.name}}
-                    data-item-price = {{item.price}}
+                    data-item-id = 1
+                    data-item-name = Meal
+                    data-item-price = 5
                     data-item-image = "https://cdn0.iconfinder.com/data/icons/pixel-perfect-at-24px-volume-2/24/2034-512.png"
                      />
                 </div>
             </div>
-        {% endfor %}
+             <div class="card" style="width: 16rem; height: 16rem;">
+                <div class="card-title" style="align:center; margin-left: auto; margin-right:auto;"> <div class="centered">Socks</div></div>
+                <div class="card-body">
+                    <img class="card-img-top" id=2 style="width:145px;height:145px; margin-bottom: 15px; margin-top: -25px;">
+                    <p class="card-text" style="padding-top: 20px;" align="center">
+                        <br>
+                        <i>Price:</i> $2    <i>Quantity:</i>
+                    <input name="qty[]"
+                    onkeypress="return isNumeric(event)"
+                    oninput="maxLengthCheck(this)"
+                    placeholder="0"
+                    type="text"
+                    align="center"
+                    size="3.5"
+                    min = "0"
+                    max = "999"
+                    data-item-id = 2
+                    data-item-name = Socks
+                    data-item-price = 2
+                    data-item-image = "data:image/png;base64,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"
+                     />
+                </div>
+            </div>
         <div class="card" style="width: 16rem; height: 16rem;">
             <div class="card-title" style="align:center; margin-left: auto; margin-right:auto;"> <div class="centered">Donate money</div></div>
             <div class="card-body">
-                <img class="card-img-top" id="donate" src="http://icons.iconarchive.com/icons/cjdowner/cryptocurrency/512/Dollar-USD-icon.png" style="width:145px;height:145px; margin-bottom: 15px; margin-top: -25px;">
+                <img class="card-img-top" id="donate" src="https://cdn3.iconfinder.com/data/icons/glypho-money-and-finance/64/money-dollar-circle-512.png" style="width:145px;height:145px; margin-bottom: 15px; margin-top: -25px;">
                 <p class="card-text" align="center" style="padding-top: 20px;">
                     <br>
                     <i>Amount:</i>
@@ -58,7 +79,7 @@
                 data-item-id = "donate"
                 data-item-name = "donation"
                 data-item-price = 1
-                data-item-image = "https://banner2.kisspng.com/20171216/5d0/dollar-sign-png-5a355146e059a3.4282492115134436549189.jpg"
+                data-item-image = "https://cdn3.iconfinder.com/data/icons/glypho-money-and-finance/64/money-dollar-circle-512.png"
                  />
             </div>
         </div>
