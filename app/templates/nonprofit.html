@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Nonprofit: {{ nonprofit.name }}</h1>
-    <p>Mission: {{ nonprofit.description }}</p>
 
-    <div class="container">
-        <div class="row justify-content-start">
+<div style="width: 100%; background-color: #f9f9f9;">
+    <div style="width: 1350px; margin: 0 auto 30px auto; background-color: white; box-shadow: 0 4px 16px -6px black;" class="jumbotron">
+      <img src='https://www.stanthonysf.org/app/uploads/2014/10/DR-Howard-and-Ellen-1080x477.jpg' style="width:75%; margin-left: 24%; margin-top: 40px; background-color: white;">
+
+      <div style="width: 450px; height: 450px; position: relative; left: 90px; top: -330px; background-color: rgba(235,235,235, 0.8);">
+          <h1 style="color: black; opacity: 100%; padding-top: 40px; text-align: center; font-size: 65px;"><strong>{{nonprofit.name}}</strong></h1>
+          <h4 style="margin-top: 90px; color: black; opacity: 100%; text-align: left; margin-left: 15px;"><strong>Our Mission</strong></h4>
+          <h5 style="margin-top: 40px; color: black; opacity: 100%; text-align: left; margin-left: 15px; margin-right: 10px;">{{nonprofit.description}}</h5>
+      </div>
+
+        <div class="row justify-content-center" style="margin-top: -250px;">
         {% for item in items %}
             <div class="card" style="width: 16rem; height: 16rem;">
                 <div class="card-body">
@@ -28,7 +35,7 @@
                     data-item-price = {{item.price}}
                     data-item-image = "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png"
                      />
-                </div>   
+                </div>
             </div>
         {% endfor %}
         <div class="card" style="width: 16rem; height: 16rem;">
@@ -52,15 +59,17 @@
                 data-item-price = 1
                 data-item-image = "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png"
                  />
-            </div>   
+            </div>
         </div>
         </div>
         <br>
-        <div name="sum" class="total" align="left"></div>
-        <button class="basketbutton">Send your donation</button>
-        </div>
-
+        <div name="sum" class="total" align="right"></div>
+        <div style=" float: right;"><button class="basketbutton">Send your donation</button></div>
+        <div style="margin: 40px;"></div>
     </div>
+</div>
+
+
 <script type="text/javascript">
 
   function maxLengthCheck(object) {
@@ -80,7 +89,7 @@
     }
   }
     //Get a list of input fields to sum
-    document.getElementsByName("sum")[0].innerHTML = "Total: $0"
+    document.getElementsByName("sum")[0].innerHTML = "Total Donation: $0"
     var elements = document.getElementsByName("qty[]");
     var element_array = Array.prototype.slice.call(elements);
 
@@ -100,7 +109,7 @@
             }
             sum += price*toAdd;
         }
-        document.getElementsByName("sum")[0].innerHTML = "Total: $" + sum;
+        document.getElementsByName("sum")[0].innerHTML = "Total Donation: $" + sum;
     } 
     for(var i=0; i < element_array.length-1; i++){
         id = element_array[i].getAttribute("data-item-id");
